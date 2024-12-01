@@ -1,0 +1,17 @@
+{
+  "name": "portfolio",
+  "version": "1.0.0",
+  "scripts": {
+    "build": "tsc",
+    "build:scss": "sass src/styles/main.scss css/main.css",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "aandrku",
+  "license": "MIT",
+  "description": "Personal portfolio",
+  "devDependencies": {
+    "sass": "^1.81.0",
+    "scss": "^0.2.4",
+    "typescript": "^5.7.2"
+  }
+}

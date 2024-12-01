@@ -1,4 +1,4 @@
-import { initPage } from "./utils/init-page"
+import { initPage } from "./utils/init-page.js";
 
 initPage()
 

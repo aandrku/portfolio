@@ -1,0 +1,14 @@
+@import "./variables";
+
+.bg-canvas {
+  position: fixed;
+
+  width: 100vw;
+  height: 100vh;
+
+
+  background: $bg-color;
+
+  z-index: -1;
+
+}

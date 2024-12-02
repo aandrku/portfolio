@@ -1,0 +1,104 @@
+@import "./variables";
+
+.hero {
+  position: relative;
+  
+  display:flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  .heading {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    margin-bottom: 4rem;
+
+    font-size: 2.4rem;
+
+    .heading__ln {
+      text-align: center;
+    }
+
+    .ln1 {
+      animation: fromRight 1s ease;
+    }
+
+    .ln2 {
+      animation: fromLeft 1s ease;
+    }
+
+    @media (max-width: $breakpoint-small) {
+      font-size: 1.5rem;
+    }
+
+  }
+
+  .name {
+    color: $font-color-highlighted;
+  }
+
+  .hint {
+    position: absolute;
+    bottom: 2rem;
+    left: 50%;
+    transform: translateX(-50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    width: 100%;
+
+    text-align: center;
+    font-size: 1.1rem;
+
+    color: $font-color-fading;
+
+    animation: hintAnimation 3s linear infinite;
+
+    @media (max-width: $breakpoint-small) {
+      bottom: 4rem;
+    }
+  }
+
+}
+
+@keyframes hintAnimation {
+  0% {
+    opacity: 20%;
+  }
+  50% {
+    opacity: 70%;
+  }
+  100% {
+    opacity: 20%;
+  }
+}
+
+@keyframes fromLeft {
+  0% {
+    opacity: 0;
+    transform: translateX(-100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+
+}
+
+@keyframes fromRight {
+  0% {
+    opacity: 0;
+    transform: translateX(100%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}

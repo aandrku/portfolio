@@ -1,0 +1,36 @@
+@import "./variables";
+
+html, body {
+  margin: 0;
+  padding: 0;
+
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+
+  font-size: 18px;
+  font-family: "Fira Code", monospace;
+  color: $font-color-primary;
+
+  background: rgba(0, 0, 0, 0.0);
+
+  @media (max-width: $breakpoint-small) {
+    fotn-size: 14px;
+  }
+}
+
+html::-webkit-scrollbar, body::-webkit-scrollbar {
+  display: none;
+  width: 0px;
+  height: 0px;
+}
+
+body {
+  overflow-y: scroll;
+
+  display: flex;
+  flex-direction: column;
+}

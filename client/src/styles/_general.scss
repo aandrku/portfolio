@@ -10,6 +10,7 @@ html, body {
   scroll-snap-stop: always;
   scroll-behavior: smooth;
   -webkit-overflow-scrolling: touch;
+  overscroll-behavior: none;
 
   font-size: 18px;
   font-family: "Fira Code", monospace;
@@ -20,6 +21,10 @@ html, body {
   @media (max-width: $breakpoint-small) {
     fotn-size: 14px;
   }
+}
+
+html {
+  background: $bg-color;
 }
 
 html::-webkit-scrollbar, body::-webkit-scrollbar {

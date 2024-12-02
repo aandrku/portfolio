@@ -4,38 +4,41 @@ html, body {
   margin: 0;
   padding: 0;
 
-  scrollbar-width: none;
-  -ms-overflow-style: none;
-  scroll-snap-type: y mandatory;
-  scroll-snap-stop: always;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
-  overscroll-behavior: none;
 
   font-size: 18px;
   font-family: "Fira Code", monospace;
   color: $font-color-primary;
 
   background: rgba(0, 0, 0, 0.0);
-
-  @media (max-width: $breakpoint-small) {
-    fotn-size: 14px;
-  }
 }
 
 html {
   background: $bg-color;
 }
 
-html::-webkit-scrollbar, body::-webkit-scrollbar {
-  display: none;
-  width: 0px;
-  height: 0px;
+body {
+  position: fixed;
+  overflow-y: hidden;
+
+  width: 100vw;
+  height: 100vh;
+
 }
 
-body {
-  overflow-y: scroll;
+.content-wrapper {
+  width: 100vw;
+  height: 100vh;
 
-  display: flex;
-  flex-direction: column;
+  overflow-y: scroll;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+  scroll-snap-type: y mandatory;
+  scroll-snap-stop: always;
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+  overscroll-behavior: contain;
+}
+
+.content-wrapper::-webkit-scrollbar {
+  display:none;
 }

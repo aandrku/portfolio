@@ -49,7 +49,7 @@ class Dot {
 		this.x = Math.random() * innerWidth
 		this.y = Math.random() * innerHeight
 		this.op = Math.random()
-		this.dop = 0.1
+		this.dop = 0.002
 		this.dx = Math.random() - 0.5
 		this.dy = Math.random() - 0.5
 		this.width = Math.random() * 5
@@ -68,7 +68,7 @@ class Dot {
 		if (this.y <= 0 || this.y + this.height >= innerHeight) {
 			this.dy = -this.dy
 		}
-		if (this.op >= 1.0 || this.op <= 1.0) {
+		if (this.op >= 1.0 || this.op <= 0.0) {
 			this.dop = -this.dop
 		}
 

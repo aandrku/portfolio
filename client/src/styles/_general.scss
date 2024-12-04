@@ -33,10 +33,9 @@ body {
   scrollbar-width: none;
   -ms-overflow-style: none;
   scroll-snap-type: y mandatory;
-  scroll-snap-stop: always;
   scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
   overscroll-behavior: contain;
+
 }
 
 .content-wrapper::-webkit-scrollbar {

@@ -1,4 +1,5 @@
 @import "./variables";
+@import "./animations";
 
 .hero {
   position: relative;
@@ -68,37 +69,4 @@
 
 }
 
-@keyframes hintAnimation {
-  0% {
-    opacity: 20%;
-  }
-  50% {
-    opacity: 70%;
-  }
-  100% {
-    opacity: 20%;
-  }
-}
 
-@keyframes fromLeft {
-  0% {
-    opacity: 0;
-    transform: translateX(-100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-
-}
-
-@keyframes fromRight {
-  0% {
-    opacity: 0;
-    transform: translateX(100%);
-  }
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}

@@ -1,0 +1,238 @@
+@import "./variables";
+@import"./animations";
+
+.about {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+
+  padding: 1rem;
+  box-sizing: border-box;
+
+  .about__content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 2rem;
+
+    flex: 1 1 100%;
+
+    overflow-y: hidden;
+
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box;
+
+
+    .about__heading {
+      color: $font-color-highlighted;
+      text-align: center;
+      margin-top: 0;
+    }
+
+
+    .story {
+      width: 50%;
+      overflow-x: auto;
+      overscroll-behavior: contain;
+      border-radius: 10px;
+      padding: 1rem;
+      font-size: 1.4rem;
+
+      background: $bg-color-widget;
+
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+    }
+
+    .skills {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 3rem;
+      width: 50%;
+      
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: none;
+      -ms-overflow-style: none;
+
+
+      .skill {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.2rem;
+
+        width: 8rem;
+        height: 8rem;
+        padding: 1rem;
+        border-radius: 1rem;
+        box-sizing: border-box;
+
+        background: $bg-color-widget;
+
+        svg {
+          width: 4rem;
+          height: 4rem;
+        }
+
+
+      }
+    }
+
+    .story::-webkit-scrollbar, .skill::-webkit-scrollbar {
+      display: none;
+    }
+
+  }
+
+  .about__hint {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    width: 100%;
+
+    text-align: center;
+    font-size: 1.1rem;
+
+    color: $font-color-fading;
+
+    animation: hintAnimation 3s linear infinite;
+  }
+
+  @media (min-width: #{$breakpoint-xlarge}) and (max-width: #{$breakpoint-xxlarge}) {
+    .about__content {
+      .story {
+        width: 60%;
+        height: 30%;
+        font-size: 1.1rem;
+      }
+
+      .skills {
+        width: 60%;
+        gap: 1.5rem
+      }
+        .skill {
+          width: 7rem;
+          height: 7rem;
+        }
+
+    }
+
+  }
+
+  @media (min-width: #{$breakpoint-large}) and (max-width: #{$breakpoint-xlarge}) {
+    .about__content {
+      .story {
+        width: 70%;
+        height: 30%;
+        font-size: 1.0rem;
+      }
+
+      .skills {
+        width: 70%;
+        gap: 1.4rem;
+
+        .skill {
+          width: 6.5rem;
+          height: 6.5rem;
+        }
+      }
+    }
+
+  }
+  
+  @media (min-width: #{$breakpoint-medium}) and (max-width: #{$breakpoint-large}) {
+    .about__content {
+      .story {
+        width: 80%;
+        height: 30%;
+        font-size: 0.9rem;
+      }
+
+
+      .skills {
+        width: 80%;
+        gap: 1.3rem;
+
+        .skill {
+          width: 5.5rem;
+          height: 5.5rem;
+        }
+      }
+    }
+
+  }
+
+  @media (min-width: #{$breakpoint-small}) and (max-width: #{$breakpoint-medium}) {
+    .about__content {
+      .story {
+        width: 90%;
+        height: 40%;
+        font-size: 0.9rem;
+      }
+
+
+      .skills {
+        width: 90%;
+        gap: 1.2rem;
+
+        .skill {
+          width: 5rem;
+          height: 5rem;
+          padding: 1rem;
+
+          font-size: 0.7rem;
+        }
+      }
+
+    }
+
+  }
+
+
+  @media (max-width: $breakpoint-small) {
+    padding-bottom: 8rem;
+
+    .about__content {
+      gap: 1rem;
+      .story {
+        width: 90%;
+        height: 40%;
+        font-size: 0.8rem;
+      }
+
+      .skills {
+        width: 90%;
+        max-height: 60%;
+        gap: 0.5rem;
+
+
+        .skill {
+          width: 4rem;
+          height: 4rem;
+          padding: 1rem;
+
+          font-size: 0.6rem;
+
+          svg {
+            width: 2rem;
+            height: 2rem;
+          }
+        }
+      }
+
+    }
+
+
+    .about__hint {
+      bottom: 8rem;
+    }
+
+  }
+}

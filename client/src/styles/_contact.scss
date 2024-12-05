@@ -1,0 +1,169 @@
+@import "./variables";
+
+$bg-color-footer: rgba(13, 12, 14, 0.8);
+
+
+.contact {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  gap: 4rem;
+
+  .contact__heading {
+    flex-grow: 0;
+    width: 100%;
+    color: $font-color-highlighted;
+
+    text-align: center;
+
+
+
+  }
+
+  .contact__form {
+    position: relative;
+
+    display: flex;
+    flex-direction: column;
+    flex-grow: 1;
+    background: $bg-color-widget;
+    gap: 1rem;
+
+    padding: 1rem;
+    padding-bottom: 3rem;
+    box-sizing: border-box;
+
+    width: 50%;
+    border-radius: 1rem;
+
+    p {
+      flex: 0 0 auto;
+    }
+
+    .inputs {
+      display: flex;
+      flex-direction: column;
+      flex: 1;
+      gap: 1rem;
+
+
+      textarea, input {
+        border: none;
+
+        border-radius: 0.5rem;
+        padding: 0.5rem;
+        outline: none;
+        font-size: 1rem;
+        color: $font-color-primary;
+        font-family: "Fira Code", monospace;
+
+      }
+
+      textarea::placeholder, input::placeholder {
+        color: $font-color-fading;
+      }
+
+      textarea:focus, input:focus {
+        outline: none;
+        border: none;
+      }
+
+      input {
+        background: $bg-color;
+      }
+
+      textarea {
+        flex: 1;
+        resize: none;
+        height: 100%;
+        background: $bg-color;
+      }
+    }
+
+    .contact__btn {
+      position: absolute;
+      bottom: 1rem;
+      right: 2rem;
+
+      color: $font-color-highlighted;
+
+    }
+
+  }
+
+  .contact__footer {
+    position: relative;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
+
+    flex-grow: 0;
+
+    width: 100%;
+    height: 20%;
+
+    background: $bg-color-footer;
+
+    .contact__top-btn {
+      position: absolute;
+      top: -15px;
+      left: 50%;
+      transform: translateX(-50%);
+
+      padding: 5px;
+      border: solid 1px $font-color-highlighted;
+      border-radius: 5px;
+
+      background: $bg-color-footer;
+
+      svg {
+        width: 24px;
+        height: 24px;
+      }
+
+
+    }
+
+    .icon {
+      svg {
+        width: 36px;
+        height: 36px;
+      }
+    }
+
+
+
+  }
+
+  @media (max-width: $breakpoint-small) {
+    gap: 4rem;
+    .contact__form {
+      gap: 0.8rem;
+      p {
+        font-size: 0.8rem;
+      }
+
+      .inputs {
+        gap: 0.5rem;
+      }
+
+      width: 90%;
+    }
+    
+    .contact__footer {
+      height: 28%;
+
+      padding-bottom: 112px;
+      box-sizing: border-box;
+
+      .contact__top-btn {
+        top: -30px;
+      }
+    }
+
+  }
+
+}

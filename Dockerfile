@@ -24,6 +24,7 @@ WORKDIR /app
 
 COPY --from=client-builder /app/dist ./dist
 COPY --from=client-builder /app/css ./css
+COPY --from=client-builder /app/src/assets ./assets
 COPY --from=client-builder /app/src/pages ./pages
 
 COPY --from=server-builder /server/server ./

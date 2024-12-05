@@ -13,6 +13,7 @@ func main() {
 
 	mux.Handle("/dist/", fs)
 	mux.Handle("/css/", fs)
+	mux.Handle("/assets/", fs)
 	mux.HandleFunc("/", RootHandler)
 
 	server := http.Server{

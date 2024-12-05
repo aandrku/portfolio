@@ -1,0 +1,424 @@
+@import "./variables";
+
+.project {
+  display: flex;
+  flex-direction: row;
+  max-height: 100vh;
+
+  box-sizing: border-box;
+
+  .project__section-1 {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+
+      box-sizing: border-box;
+
+      a {
+        text-decoration: none;
+        color: $font-color-highlighted;
+        background: $bg-color-widget;
+        text-align: center;
+      }
+
+      img {
+        max-width: 95%;
+        height: auto;
+      }
+
+      .technologies {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+
+        box-sizing: border-box;
+
+        div {
+          text-align: center;
+          background: $bg-color-widget;
+
+        }
+      }
+  }
+
+  .project__section-2 {
+      display: flex;
+      flex-direction: column;
+      background: $bg-color-widget;
+
+      border-radius: 2rem;
+
+      box-sizing: border-box;
+
+      h1 {
+        color: $font-color-highlighted;
+        margin: 0;
+      }
+
+      ul {
+        margin: 0;
+      }
+
+  }
+
+  @media (min-width: $breakpoint-xxlarge) {
+    gap: 1.7rem;
+
+    padding: 1rem;
+
+    .project__section-1 {
+      gap: 5rem;
+      padding-top: 1rem;
+
+      a {
+        padding: 0.5rem;
+        width: 90%;
+        border-radius: 0.5rem;
+        font-size: 1.8rem;
+      }
+
+      .technologies {
+        gap: 0.8rem;
+        width: 100%;
+        padding: 0 0.8rem;
+
+        font-size: 1.5rem;
+
+        div {
+          padding: 0.4rem;
+          border-radius: 0.6rem;
+
+        }
+
+      }
+
+    }
+
+    .project__section-2 {
+      width: 95%;
+      padding: 1rem;
+
+      border-radius: 1.1rem;
+      font-size: 1.5rem;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: none;
+    }
+
+    .project__section-2::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  @media (min-width: #{$breakpoint-xlarge}) and (max-width: #{$breakpoint-xxlarge}) {
+
+    gap: 1.7rem;
+
+    padding: 1rem;
+
+    .project__section-1 {
+      gap: 5rem;
+      padding-top: 1rem;
+
+      a {
+        padding: 0.5rem;
+        width: 90%;
+        border-radius: 0.5rem;
+        font-size: 1.8rem;
+      }
+
+      .technologies {
+        gap: 0.8rem;
+        width: 100%;
+        padding: 0 0.8rem;
+
+        font-size: 1.5rem;
+
+        div {
+          padding: 0.4rem;
+          border-radius: 0.6rem;
+
+        }
+
+      }
+
+    }
+
+    .project__section-2 {
+      width: 95%;
+      padding: 1rem;
+
+      border-radius: 1.1rem;
+      font-size: 1.5rem;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: none;
+    }
+
+    .project__section-2::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  @media (min-width: #{$breakpoint-medium}) and (max-width: #{$breakpoint-large}) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.7rem;
+
+    padding-bottom: 2rem;
+
+    .project__section-1 {
+      gap: 0.5rem;
+      padding-top: 1rem;
+
+      a {
+        padding: 0.5rem;
+        width: 90%;
+        border-radius: 0.5rem;
+        font-size: 1.3rem;
+      }
+
+      .technologies {
+        gap: 0.4rem;
+        width: 100%;
+        padding: 0 0.5rem;
+
+        font-size: 0.7rem;
+
+        div {
+          padding: 0.3rem;
+          border-radius: 0.2rem;
+
+        }
+
+      }
+
+    }
+
+    .project__section-2 {
+      width: 95%;
+      padding: 1rem;
+
+      border-radius: 1.1rem;
+      font-size: 0.7rem;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: none;
+    }
+
+    .project__section-2::-webkit-scrollbar {
+      display: none;
+    }
+
+
+  }
+  
+  @media (min-width: #{$breakpoint-large}) and (max-width: #{$breakpoint-xlarge}) {
+    gap: 1.7rem;
+
+    padding: 1rem;
+
+    .project__section-1 {
+      gap: 3rem;
+      padding-top: 1rem;
+
+      a {
+        padding: 0.5rem;
+        width: 90%;
+        border-radius: 0.5rem;
+        font-size: 1.8rem;
+      }
+
+      .technologies {
+        gap: 0.8rem;
+        width: 100%;
+        padding: 0 0.8rem;
+
+        font-size: 1.5rem;
+
+        div {
+          padding: 0.4rem;
+          border-radius: 0.6rem;
+
+        }
+
+      }
+
+    }
+
+    .project__section-2 {
+      width: 95%;
+      padding: 1rem;
+
+      border-radius: 1.1rem;
+      font-size: 1rem;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: none;
+    }
+
+    .project__section-2::-webkit-scrollbar {
+      display: none;
+    }
+  }
+
+  @media (min-width: #{$breakpoint-medium}) and (max-width: #{$breakpoint-large}) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.7rem;
+
+    padding-bottom: 2rem;
+
+    .project__section-1 {
+      gap: 0.5rem;
+      padding-top: 1rem;
+
+      a {
+        padding: 0.5rem;
+        width: 90%;
+        border-radius: 0.5rem;
+        font-size: 1.3rem;
+      }
+
+      .technologies {
+        gap: 0.4rem;
+        width: 100%;
+        padding: 0 0.5rem;
+
+        font-size: 0.7rem;
+
+        div {
+          padding: 0.3rem;
+          border-radius: 0.2rem;
+
+        }
+
+      }
+
+    }
+
+    .project__section-2 {
+      width: 95%;
+      padding: 1rem;
+
+      border-radius: 1.1rem;
+      font-size: 0.7rem;
+      overflow-y: auto;
+      overscroll-behavior: contain;
+      scrollbar-width: none;
+    }
+
+    .project__section-2::-webkit-scrollbar {
+      display: none;
+    }
+
+  }
+
+  @media (min-width: #{$breakpoint-small}) and (max-width: #{$breakpoint-medium}) {
+    flex-direction: column;
+    align-items: center;
+
+    gap: 1.7rem;
+
+    .project__section-1 {
+      gap: 0.5rem;
+      padding-top: 1rem;
+
+      a {
+        padding: 0.5rem;
+        width: 90%;
+        border-radius: 0.5rem;
+        font-size: 1.3rem;
+      }
+
+      .technologies {
+        gap: 0.4rem;
+        width: 100%;
+        padding: 0 0.5rem;
+
+        font-size: 0.7rem;
+
+        div {
+          padding: 0.3rem;
+          border-radius: 0.2rem;
+
+        }
+
+      }
+
+    }
+
+    .project__section-2 {
+      width: 95%;
+      padding: 1rem;
+
+      border-radius: 1.1rem;
+      font-size: 0.7rem;
+    }
+
+  }
+
+  @media (max-width: $breakpoint-small) {
+    flex-direction: column;
+    align-items: center;
+    gap: 1.6rem;
+    
+    .project__section-1 {
+      gap: 0.4rem;
+
+      padding-top: 1rem;
+      
+      a {
+        padding: 0.5rem;
+        width: 90%;
+        border-radius: 0.5rem;
+
+        font-size: 1.2rem;
+      }
+
+      .technologies {
+        gap: 0.3rem;
+
+        width: 100%;
+        padding: 0 0.4rem;
+        
+
+        font-size: 0.6rem;
+        
+        div {
+          padding: 0.3rem;
+          border-radius: 0.2rem;
+
+
+        }
+
+      }
+    }
+
+
+    .project__section-2 {
+      gap: 0.3rem;
+
+      width: 95%;
+      padding: 1rem;
+      box-sizing: border-box;
+
+      border-radius: 1rem;
+
+      font-size: 0.6rem;
+
+      h1 {
+        margin: 0;
+        color: $font-color-highlighted;
+      }
+
+      ul {
+        margin: 0;
+      }
+
+
+    }
+
+  }
+
+}

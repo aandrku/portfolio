@@ -3,6 +3,8 @@
 html, body {
   margin: 0;
   padding: 0;
+  height: 100vh;
+  height: 100dvh;
 
 
   font-size: 18px;
@@ -22,12 +24,13 @@ body {
 
   width: 100vw;
   height: 100vh;
+  height: 100dvh;
 
 }
 
 .content-wrapper {
   width: 100vw;
-  height: 100vh;
+  height: 100dvh;
 
   overflow-y: scroll;
   scrollbar-width: none;

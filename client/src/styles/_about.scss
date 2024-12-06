@@ -197,7 +197,6 @@
 
 
   @media (max-width: $breakpoint-small) {
-    padding-bottom: 8rem;
 
     .about__content {
       gap: 1rem;
@@ -229,10 +228,6 @@
 
     }
 
-
-    .about__hint {
-      bottom: 8rem;
-    }
 
   }
 }

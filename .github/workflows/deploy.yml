@@ -26,7 +26,6 @@ jobs:
 
       - name: Push Docker image
         run: |
-          docker push aandrku/portfolio:${{github.sha}}
           docker push aandrku/portfolio:latest
 
       - name: Set up the SSH private key

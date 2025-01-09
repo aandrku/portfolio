@@ -3,6 +3,7 @@ package main
 import (
 	"fmt"
 	"net/http"
+	"portfolio/pkg/emails"
 )
 
 func main() {
@@ -14,7 +15,7 @@ func main() {
 	mux.Handle("/css/", fs)
 	mux.Handle("/assets/", fs)
 	mux.HandleFunc("/", RootHandler)
-	mux.HandleFunc("/email", EmailHandler)
+	mux.HandleFunc("/email", emails.EmailHandler)
 
 	server := http.Server{
 		Addr:    ":80",
@@ -30,8 +31,4 @@ func RootHandler(w http.ResponseWriter, r *http.Request) {
 	filePath := "./pages/index.html"
 
 	http.ServeFile(w, r, filePath)
-}
-
-func EmailHandler(w http.ResponseWriter, r *http.Request) {
-
 }

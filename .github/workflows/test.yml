@@ -28,10 +28,6 @@ jobs:
       run: |
         docker build -t aandrku:portfolio .
 
-    # Step 4: Change to the server directory
-    - name: Change to server directory
-      working-directory: ./server
-      run: echo "Switched to server directory"
 
     # Step 5: Run go build
     - name: Run go build
@@ -45,6 +41,7 @@ jobs:
 
     # Step 7: Run golangci-lint
     - name: Run golangci-lint
+      working-directory: ./server
       uses: golangci/golangci-lint-action@v3
       with:
         args: ./...

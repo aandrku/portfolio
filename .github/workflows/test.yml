@@ -23,7 +23,11 @@ jobs:
 
     - name: Build Docker Image
       run: |
-        docker build -t aandrku:portfolio .
+        docker build \
+          -t portfolio:${{ github.sha }} \
+          --build-arg EMAIL="${{ secrets.MY_EMAIL }}" \
+          --build-arg EMAIL_PASSWORD="${{ secrets.MY_EMAIL_PASSWORD }}" \
+          . 
 
 
     - name: Run go build

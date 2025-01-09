@@ -21,7 +21,11 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t portfolio:${{github.sha}} .
+          docker build \
+            -t portfolio:${{ github.sha }} \
+            --build-arg EMAIL="${{ secrets.MY_EMAIL }}" \
+            --build-arg EMAIL_PASSWORD="${{ secrets.MY_EMAIL_PASSWORD }}" \
+            . 
           docker tag portfolio:${{github.sha}} aandrku/portfolio:latest
 
       - name: Push Docker image

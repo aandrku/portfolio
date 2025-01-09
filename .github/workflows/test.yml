@@ -41,7 +41,7 @@ jobs:
 
     # Step 7: Run golangci-lint
     - name: Run golangci-lint
-      working-directory: ./server
       uses: golangci/golangci-lint-action@v3
       with:
         args: ./...
+      working-directory: ./server

@@ -2,7 +2,6 @@ package emails
 
 import (
 	"encoding/json"
-	"fmt"
 	"io"
 	"net/http"
 )

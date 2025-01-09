@@ -13,37 +13,33 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    # Step 1: Checkout code
     - name: Checkout code
       uses: actions/checkout@v3
 
-    # Step 2: Set up Go environment
     - name: Set up Go
       uses: actions/setup-go@v4
       with:
         go-version: 1.23  # Specify your Go version
 
-    # Step 3: Build Docker image
     - name: Build Docker Image
       run: |
         docker build -t aandrku:portfolio .
 
 
-    # Step 5: Run go build
     - name: Run go build
       working-directory: ./server
       run: go build ./...
 
-    # Step 6: Run go test
     - name: Run go test
       working-directory: ./server
       run: go test ./... -v
 
-    # Step 7: Run golangci-lint
-    - name: Run golangci-lint
-      uses: golangci/golangci-lint-action@v3
-      with:
-        version: v1.63.4  # Specify the version of golangci-lint
-        args: ./...
-      env:
-        GOLANGCI_LINT_RUN: cd server && golangci-lint run ./...
+    - name: Install golangci-lint
+      run: |
+        curl -sSfL https://raw.githubusercontent.com/golangci/golangci-lint/master/install.sh | sh -s -- -b $(go env GOPATH)/bin v1.63.4
+        echo "golangci-lint installed"
+
+    - name: Run golangci-lint in subdirectory
+      run: |
+        cd server
+        golangci-lint run ./...

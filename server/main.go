@@ -4,10 +4,10 @@ import (
 	"fmt"
 	"log"
 	"net/http"
+	"portfolio/pkg/emails"
 )
 
 func main() {
-
 	fs := http.FileServer(http.Dir("."))
 
 	mux := http.NewServeMux()
@@ -16,6 +16,7 @@ func main() {
 	mux.Handle("/css/", fs)
 	mux.Handle("/assets/", fs)
 	mux.HandleFunc("/", RootHandler)
+	mux.HandleFunc("/email", emails.EmailHandler)
 
 	server := http.Server{
 		Addr:    ":80",
@@ -33,5 +34,4 @@ func RootHandler(w http.ResponseWriter, r *http.Request) {
 	filePath := "./pages/index.html"
 
 	http.ServeFile(w, r, filePath)
-
 }

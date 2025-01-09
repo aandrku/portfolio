@@ -6,7 +6,6 @@ import (
 )
 
 func main() {
-
 	fs := http.FileServer(http.Dir("."))
 
 	mux := http.NewServeMux()
@@ -15,9 +14,10 @@ func main() {
 	mux.Handle("/css/", fs)
 	mux.Handle("/assets/", fs)
 	mux.HandleFunc("/", RootHandler)
+	mux.HandleFunc("/email", EmailHandler)
 
 	server := http.Server{
-		Addr: ":80",
+		Addr:    ":80",
 		Handler: mux,
 	}
 
@@ -26,9 +26,12 @@ func main() {
 
 }
 
-func RootHandler (w http.ResponseWriter, r *http.Request) {
-	filePath := "./pages/index.html"	
+func RootHandler(w http.ResponseWriter, r *http.Request) {
+	filePath := "./pages/index.html"
 
 	http.ServeFile(w, r, filePath)
+}
+
+func EmailHandler(w http.ResponseWriter, r *http.Request) {
 
 }

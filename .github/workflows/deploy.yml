@@ -21,9 +21,23 @@ jobs:
 
       - name: Build Docker image
         run: |
-          docker build -t my-app:${{github.sha}} .
-          docker tag my-app:${{github.sha}} aandrku/portfolio:latest
+          docker build -t portfolio:${{github.sha}} .
+          docker tag portfolio:${{github.sha}} aandrku/portfolio:latest
 
       - name: Push Docker image
         run: |
+          docker push aandrku/portfolio:${{github.sha}}
           docker push aandrku/portfolio:latest
+
+      - name: Set up the SSH private key
+        run: |
+          mkdir -p ~/.ssh
+          echo "${{ secrets.SSH_PRIVATE_KEY }}" > ~/.ssh/id_rsa
+          chmod 600 ~/.ssh/id_rsa
+
+      - name: Add to known hosts
+        run: |
+          ssh-keyscan -H 44.223.136.62 >> ~/.ssh/known_hosts
+      - name: ssh into EC2 
+        run: |
+          ssh -i ~/.ssh/id_rsa ubuntu@44.223.136.62 "echo 'Hello from EC2!' && uptime"

@@ -43,5 +43,4 @@ jobs:
     - name: Run golangci-lint
       uses: golangci/golangci-lint-action@v3
       with:
-        args: ./...
-      working-directory: ./server
+        args: ./server/...

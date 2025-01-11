@@ -88,6 +88,14 @@ $bg-color-footer: rgba(13, 12, 14, 0.8);
 
       color: $font-color-highlighted;
 
+      user-select: none;
+      -ms-user-select: none;
+      -moz-user-select: none;
+      user-select: none;
+    }
+
+    .contact__btn--clicked {
+      color: #90d5ff;
     }
 
   }

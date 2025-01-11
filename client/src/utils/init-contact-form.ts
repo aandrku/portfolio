@@ -1,3 +1,5 @@
+import { animateClick } from "./animateClick.js"
+
 interface ContactMessage {
 	name: string
 	email: string
@@ -33,6 +35,7 @@ const btnAction = () => {
 }
 
 export const initForm = () => {
+	animateClick(btn, "contact__btn--clicked")
 	btnAction()
 }
 

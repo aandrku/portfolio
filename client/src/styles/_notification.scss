@@ -1,0 +1,47 @@
+@import "./variables";
+
+.notification {
+  position: absolute;
+  top: 1rem;
+  left: 50%;
+  transform: translateX(-50%);
+
+
+  padding: 1rem;
+  box-sizing: border-box;
+  width: min(20rem, 95%);
+
+  background: $bg-color-widget;
+  border-radius: 0.5rem;
+
+  color: $font-color-highlighted;
+  font-size: 0.9rem;
+  text-align: center;
+
+  animation: notifDissapper 3s ease;
+
+  z-index: 1000;
+
+}
+
+@keyframes notifDissapper {
+  0% {
+    transform: translateY(-100%) translateX(-50%);
+    opacity: 0; }
+
+  10% {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+
+  90% {
+    transform: translateY(0) translateX(-50%);
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 0;
+    transform: translateY(-100%) translateX(-50%);
+  }
+
+}

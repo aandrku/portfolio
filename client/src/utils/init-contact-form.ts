@@ -1,3 +1,6 @@
+import { notification } from "../components/notification.js"
+import { animateClick } from "./animateClick.js"
+
 interface ContactMessage {
 	name: string
 	email: string
@@ -24,15 +27,30 @@ const getContactMessage = (): ContactMessage => {
 const btnAction = () => {
 	btn.onclick = () => {
 		let body = JSON.stringify(getContactMessage())
+		let statusOK : boolean = false
 
 		fetch("/email", {
 			method: "POST",
 			body: body
 		})
+		.then(resp => {
+			if (resp.ok) {
+				statusOK = true
+			}
+			return resp.text()
+		})
+		.then(text => {
+			if (statusOK) {
+				notification("Your message was successfully sent!")
+			} else {
+				notification(text)
+			}
+		})
 	}
 }
 
 export const initForm = () => {
+	animateClick(btn, "contact__btn--clicked")
 	btnAction()
 }
 
